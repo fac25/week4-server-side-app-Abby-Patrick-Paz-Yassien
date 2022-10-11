@@ -15,3 +15,5 @@ INSERT INTO questions VALUES
 (4, 2, 'Icebreaker', 'If you could try any food, what would it be?', '2020-11-04 19:33:00'),
 (5, 3, 'Holiday', 'What is the best holiday or winter treat?','2019-10-28 21:00:00')
 ON CONFLICT DO NOTHING;
+
+COMMIT;
