@@ -23,8 +23,13 @@ function listQuestions() {
 }
 
 const user_questions = db.prepare(/*sql*/ `
-SELECT topic, question, created_at, user_id
-FROM questions WHERE user_id=?
+SELECT 
+questions.topic AS topic, 
+questions.question AS question, 
+questions.created_at AS created_at,
+users.username AS username
+FROM questions JOIN users ON questions.user_id = users.id
+WHERE user_id=?
 `)
 
 function getUserQuestions(user_id) {
@@ -32,9 +37,15 @@ function getUserQuestions(user_id) {
 }
 
 const select_questions_by_topic = db.prepare(/*sql*/ `
-SELECT topic, question, created_at, user_id
-FROM questions WHERE topic=?
+SELECT 
+questions.topic AS topic, 
+questions.question AS question, 
+questions.created_at AS created_at,
+users.username AS username
+FROM questions JOIN users ON questions.user_id = users.id
+WHERE topic=?
 `)
+
 
 function getQuestionByTopic(topic) {
     return select_questions_by_topic.all(topic)
