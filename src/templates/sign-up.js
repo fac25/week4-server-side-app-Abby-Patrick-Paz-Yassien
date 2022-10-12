@@ -1,7 +1,8 @@
 const { Layout } = require("./layout.js");
+const { validate } = require("../utils.js");
 
 // Sign-up HTML
-function signUpHtml() {
+function signUpHtml(errors = {}) {
     const title = "Create your account";
     const content = /*html*/ `
       
@@ -9,9 +10,11 @@ function signUpHtml() {
       <form method="POST">
 
       <label for="username">username</label>
+      ${validate(errors.username)}
       <input id="username" name="username" type="text" />
       
       <label for="password">password</label>
+      ${validate(errors.password)}
       <input id="password" name="password" type="password" />
       
       <button>Submit</button>

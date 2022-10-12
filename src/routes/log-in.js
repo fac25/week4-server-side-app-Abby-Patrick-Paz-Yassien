@@ -10,6 +10,16 @@ function get(request, response) {
 
 function post(request, response) {
   let { username, password } = request.body;
+
+  let errors = {};
+  !username ? (errors.username = "Please add a username") : "";
+  !password ? (errors.password = "Please add a password") : "";
+
+  if (Object.keys(errors).length){
+    response.status(400)
+    return response.send(logInHtml(errors))
+  }
+
   const user = getUserByUsername(sanitize(username));
 
   const error = () =>
