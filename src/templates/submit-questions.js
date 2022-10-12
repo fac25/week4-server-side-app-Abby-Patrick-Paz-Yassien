@@ -1,21 +1,4 @@
-function Layout({ title, content }) {
-    return /*html*/ `
-        <!doctype html>
-        <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <title>${title}</title>
-            <link rel="stylesheet" href="../style.css">
-          </head>
-          <body>
-              <main>
-                ${content}
-              </main>
-            </div>
-          </body>
-        </html>
-      `
-}
+const { Layout } = require('./layout.js')
 
 function SubmitQuestion() {
     let content =/*html*/`
@@ -25,8 +8,8 @@ function SubmitQuestion() {
     </nav>
     <div>
       <form method="POST"> 
-      <label for="question-input">Question Topic?</label>
-      <textarea id="question-input" name="question-input"></textarea>
+      <label for="question">Question Topic?</label>
+      <textarea id="question" name="question"></textarea>
       <label for="topic">Question Topic?</label>
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
@@ -43,7 +26,7 @@ function SubmitQuestion() {
   </div>
     `
     return Layout({ title: "Check-in questions | Contribute", content })
-    
+
 }
 
 module.exports = { Layout, SubmitQuestion }
