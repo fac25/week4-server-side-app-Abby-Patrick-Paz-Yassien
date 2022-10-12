@@ -1,5 +1,5 @@
 const server = require("../src/server")
-// const db = require("../src/database/db")
+const db = require("../src/database/db")
 
 async function request(pathname, options = {}) {
   const app = server.listen(0)
@@ -12,15 +12,15 @@ async function request(pathname, options = {}) {
   return { status: response.status, body, headers }
 }
 
-// function reset() {
-//   db.exec(/*sql*/ `
-//     PRAGMA foreign_keys = 0;
-//     DELETE FROM users;
-//     DELETE FROM sessions;
-//     DELETE FROM questions;
-//     DELETE FROM sqlite_sequence WHERE name IN ('questions', 'sessions', 'users');
-//     PRAGMA foreign_keys = 1;
-//     `)
-// }
+function reset() {
+  db.exec(/*sql*/ `
+    PRAGMA foreign_keys = 0;
+    DELETE FROM users;
+    DELETE FROM sessions;
+    DELETE FROM questions;
+    DELETE FROM sqlite_sequence WHERE name IN ('questions', 'sessions', 'users');
+    PRAGMA foreign_keys = 1;
+    `)
+}
 
-module.exports = { request }
+module.exports = { request, reset}
