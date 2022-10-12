@@ -20,6 +20,20 @@ function redirectIfLoggedIn (request, response, templateFunction) {
     else {response.send(templateFunction());}
 }
 
+
+function allQuestionList(arr) {
+    return arr.map(
+        (question) => `
+  <li>
+    <p>${question.topic}</p>
+    <p>${question.question}</p>
+    <p>${question.username}</p>
+  </li>`
+    )
+        .join("")
+}
+
+
 function sanitize(string){
 return string.replace(/</g, "&lt;");
 }
@@ -31,4 +45,5 @@ function validate(errorMessage){
     return "";
   }
 }
-module.exports = { createCookie, redirectIfLoggedIn, sanitize, validate }
+module.exports = { createCookie, redirectIfLoggedIn,allQuestionList, sanitize, validate }
+

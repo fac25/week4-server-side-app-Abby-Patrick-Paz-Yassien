@@ -1,8 +1,9 @@
 const { Layout } = require('./layout.js')
-const { validate } = require("../utils.js");
+const { allQuestionList, validate } = require('../utils')
 
-function SubmitQuestion(errors = {}) {
-    let content =/*html*/`
+function QuestionForm(arr, errors = {}) {
+  let content =/*html*/`
+
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
@@ -26,10 +27,15 @@ function SubmitQuestion(errors = {}) {
     <button>Submit</button>
       </form>
       <button>SKIP-Take me to the questions</button>
+      <div>
+      <ul>
+      ${allQuestionList(arr)}
+      </ul>
+      </div> 
   </div>
     `
-    return Layout({ title: "Check-in questions | Contribute", content })
-
+  return Layout({ title: "Check-in questions | Contribute", content })
 }
 
-module.exports = { Layout, SubmitQuestion }
+
+module.exports = { Layout, QuestionForm }

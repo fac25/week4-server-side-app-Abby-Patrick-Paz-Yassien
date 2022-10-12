@@ -30,6 +30,7 @@ server.post("/sign-up", body, signUp.post);
 server.get("/submit-questions", submitQuestion.get)
 server.post("/submit-questions", body, submitQuestion.post)
 server.get("/search-questions", searchQuestion.get)
+server.post("/search-questions", body, searchQuestion.post)
 
 
 module.exports = server;

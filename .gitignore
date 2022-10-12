@@ -1,5 +1,6 @@
 /node_modules
 .DS_Store
+db.sqlite
 test1.sqlite
 test2.sqlite
 test3.sqlite
