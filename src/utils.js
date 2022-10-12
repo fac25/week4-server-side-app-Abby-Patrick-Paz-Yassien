@@ -8,14 +8,14 @@ function createCookie (response, user) {
           sameSite: "lax", //protect from csrf
           httpOnly: true, //protect from xss
         });
-        response.redirect(`/check-in-questions`);
+        response.redirect(`/submit-questions`);
 }
 
 function redirectIfLoggedIn (request, response, templateFunction) {
     const sid = request.signedCookies.sid;
     const session = getSession(sid);
     if (session) {
-      response.redirect("/check-in-questions")
+      response.redirect("/submit-questions")
     }
     else {response.send(templateFunction());}
 }
