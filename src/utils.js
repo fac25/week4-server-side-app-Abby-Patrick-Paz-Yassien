@@ -27,8 +27,23 @@ function allQuestionList(arr) {
   <li>
     <p>${question.topic}</p>
     <p>${question.question}</p>
+    <p>${question.username}</p>
   </li>`
     )
         .join("")
 }
-module.exports = { createCookie, redirectIfLoggedIn,allQuestionList }
+
+
+function sanitize(string){
+return string.replace(/</g, "&lt;");
+}
+
+function validate(errorMessage){
+  if (errorMessage) {
+    return `<span style="color: red">${errorMessage}</span>`;
+  } else {
+    return "";
+  }
+}
+module.exports = { createCookie, redirectIfLoggedIn,allQuestionList, sanitize, validate }
+

@@ -1,24 +1,35 @@
 const { QuestionForm } = require("../templates/submit-questions.js")
 const { addQuestions, getUserQuestions } = require("../model/questions.js")
+const { getUserByID } = require("../model/users.js");
+const { sanitize } = require("../utils");
 const { getSession } = require("../model/sessions.js")
 
 function get(req, res) {
-    const sid = req.signedCookies?.sid
-    const session = getSession(sid)
-    const user_id = session?.user_id
-    const questionsArr = getUserQuestions(user_id)
-    res.send(QuestionForm(questionsArr))
+  const sid = req.signedCookies?.sid
+  const session = getSession(sid)
+  const user_id = session?.user_id
+  const questionsArr = getUserQuestions(user_id)
+  res.send(QuestionForm(questionsArr))
 }
+
 
 function post(req, res) {
-    const sid = req.signedCookies?.sid
-    const session = getSession(sid)
-    const user_id = session?.user_id
+  let { topic, question } = req.body;
 
-    let { topic, question } = req.body;
-    addQuestions(topic, question, user_id)
-    res.redirect(`/submit-questions`);
+  let errors = {};
+  !topic ? (errors.topic = "Please select a topic") : "";
+  !question ? (errors.question = "Please add a question") : "";
+  if (Object.keys(errors).length) {
+    res.status(400);
+    return res.send(QuestionForm([], errors));
+  }
+
+  question = sanitize(question);
+  const sid = req.signedCookies?.sid;
+  const session = getSession(sid);
+  getUserByID(session.user_id);
+  addQuestions(topic, question, session.user_id);
+  res.redirect(`/submit-questions`);
 }
-
 
 module.exports = { get, post };

@@ -1,18 +1,20 @@
 const { Layout } = require('./layout.js')
-const { allQuestionList } = require('../utils')
+const { allQuestionList, validate } = require('../utils')
 
-
-function QuestionForm(arr) {
+function QuestionForm(arr, errors = {}) {
   let content =/*html*/`
+
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
     </nav>
     <div>
       <form method="POST"> 
-      <label for="question">Question Topic?</label>
+      <label for="question">Question</label>
+      ${validate(errors.question)}
       <textarea id="question" name="question"></textarea>
-      <label for="topic">Question Topic?</label>
+      <label for="topic">Topic</label>
+      ${validate(errors.topic)}
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
       <option value="mindset">Mindset</option>
@@ -22,7 +24,7 @@ function QuestionForm(arr) {
       <option value="childhood">Childhood</option>
       <option value="others">Others</option>
   </select>   
-    <button >Submit</button>
+    <button>Submit</button>
       </form>
       <button>SKIP-Take me to the questions</button>
       <div>

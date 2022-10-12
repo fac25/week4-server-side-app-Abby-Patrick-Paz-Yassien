@@ -10,8 +10,12 @@ function addQuestions(topic, question, user_id) {
 }
 
 const list_questions = db.prepare(/*sql*/ `
-SELECT topic, question, created_at
-FROM questions
+SELECT 
+questions.topic AS topic, 
+questions.question AS question, 
+questions.created_at AS created_at,
+users.username AS username
+FROM questions JOIN users ON questions.user_id = users.id
 `)
 
 function listQuestions() {

@@ -19,5 +19,13 @@ function getUserByUsername(username) {
     return select_user_by_username.get(username);
 }
 
+const select_user_by_id = db.prepare(/* sql*/ `
+SELECT username FROM users
+WHERE id = ?  
+`);
 
-module.exports = { createUser, getUserByUsername }
+function getUserByID(id) {
+  return select_user_by_id.get(id);
+}
+
+module.exports = { createUser, getUserByUsername, getUserByID }
