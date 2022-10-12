@@ -20,4 +20,15 @@ function redirectIfLoggedIn (request, response, templateFunction) {
     else {response.send(templateFunction());}
 }
 
-module.exports = { createCookie, redirectIfLoggedIn }
+
+function allQuestionList(arr) {
+    return arr.map(
+        (question) => `
+  <li>
+    <p>${question.topic}</p>
+    <p>${question.question}</p>
+  </li>`
+    )
+        .join("")
+}
+module.exports = { createCookie, redirectIfLoggedIn,allQuestionList }
