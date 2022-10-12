@@ -1,11 +1,26 @@
-const express = require("express")
-const cookieParser = require("cookie-parser")
-const staticHandler = express.static("public")
-const bodyParser = express.urlencoded({ extended: false })
-const server = express()
+// imports node modules from npm
+const cookieParser = require("cookie-parser");
+const express = require("express");
 
-server.use(staticHandler)
-server.use(cookieParser)
-server.use(bodyParser)
+const server = express();
 
-module.exports = server
+//To add css file
+const staticHandler = express.static("public");
+
+// Import routes from routes folder
+const home = require("./routes/home.js");
+const logIn = require('./routes/log-in.js')
+const signUp = require('./routes/sign-up.js')
+
+const body = express.urlencoded({ extended: false });
+const cookies = cookieParser(process.env.COOKIE_SECRET);
+
+//middlewear
+server.use(cookies);
+server.use(staticHandler);
+
+server.get("/", home.get);
+server.get("/log-in", logIn.get)
+server.get("/sign-up", signUp.get)
+
+module.exports = server;
