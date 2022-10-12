@@ -36,6 +36,7 @@ function allQuestionList(arr) {
   <li>
     <p>${question.topic}</p>
     <p>${question.question}</p>
+    <p>${question.username}</p>
   </li>`
     )
         .join("")

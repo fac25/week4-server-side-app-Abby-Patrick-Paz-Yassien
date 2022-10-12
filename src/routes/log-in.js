@@ -2,15 +2,26 @@ const { logInHtml } = require("../templates/log-in.js");
 const bcrypt = require("bcryptjs");
 const { createSession, getSession } = require("../model/sessions.js");
 const { getUserByUsername } = require("../model/users.js");
-const { createCookie, redirectIfLoggedIn } = require("../utils");
+const { createCookie, redirectIfLoggedIn, sanitize } = require("../utils");
 
 function get(request, response) {
     redirectIfLoggedIn(request, response, logInHtml)
 }
 
 function post(request, response) {
-  const { username, password } = request.body;
-  const user = getUserByUsername(username);
+  let { username, password } = request.body;
+
+  let errors = {};
+  !username ? (errors.username = "Please add a username") : "";
+  !password ? (errors.password = "Please add a password") : "";
+
+  if (Object.keys(errors).length){
+    response.status(400)
+    return response.send(logInHtml(errors))
+  }
+
+  const user = getUserByUsername(sanitize(username));
+
   const error = () =>
     response
       .status(400)

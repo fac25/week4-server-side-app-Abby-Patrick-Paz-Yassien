@@ -1,21 +1,31 @@
 const { signUpHtml } = require("../templates/sign-up.js");
 const { createUser, getUserByUsername } = require("../model/users");
-const { redirectIfLoggedIn } = require("../utils");
+const { redirectIfLoggedIn, sanitize } = require("../utils");
 const {
   createSession,
   getSession,
   removeSession,
 } = require("../model/sessions");
-const {createCookie} = require('../utils')
+const { createCookie } = require("../utils");
 const bcrypt = require("bcryptjs");
 
 function get(request, response) {
-    redirectIfLoggedIn(request, response, signUpHtml)
+  redirectIfLoggedIn(request, response, signUpHtml);
 }
 
 function post(request, response) {
   let { username, password } = request.body;
 
+  let errors = {};
+  !username ? (errors.username = "Please add a username") : "";
+  !password ? (errors.password = "Please add a password") : "";
+
+  if (Object.keys(errors).length){
+    response.status(400)
+    return response.send(signUpHtml(errors))
+  }
+
+  username = sanitize(username);
   let user = getUserByUsername(username);
   if (user) {
     response
@@ -24,8 +34,8 @@ function post(request, response) {
   } else {
     bcrypt.hash(password, 12).then((hash) => {
       //returns an id for that user
-      const newUser = createUser(username, hash);
-      createCookie(response, newUser)
+      const newUser = createUser({ username, hash });
+      createCookie(response, newUser);
     });
   }
 }

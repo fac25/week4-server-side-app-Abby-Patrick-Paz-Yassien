@@ -20,4 +20,15 @@ function redirectIfLoggedIn (request, response, templateFunction) {
     else {response.send(templateFunction());}
 }
 
-module.exports = { createCookie, redirectIfLoggedIn }
+function sanitize(string){
+return string.replace(/</g, "&lt;");
+}
+
+function validate(errorMessage){
+  if (errorMessage) {
+    return `<span style="color: red">${errorMessage}</span>`;
+  } else {
+    return "";
+  }
+}
+module.exports = { createCookie, redirectIfLoggedIn, sanitize, validate }
