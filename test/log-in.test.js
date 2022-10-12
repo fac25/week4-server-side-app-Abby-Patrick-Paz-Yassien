@@ -3,9 +3,9 @@ const assert = require("node:assert")
 const { request } = require("./helpers")
 
 describe("server", () => {
-  it("returns home template in GET /", async () => {
-    const { status, body } = await request("/")
+  it("returns login template in GET /log-in", async () => {
+    const { status, body } = await request("/log-in")
     assert.equal(status, 200)
-    assert.match(body, /<h1>Check-in with us!<\/h1>/)
+    assert.match(body, /<h1>Log In<\/h1>/)
   })
 })

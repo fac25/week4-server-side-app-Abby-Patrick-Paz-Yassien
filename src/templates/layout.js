@@ -1,13 +1,10 @@
-module.exports = { Layout }
-
 function Layout({ title, content }) {
-    return /*html*/ `
+  return /*html*/ `
       <!doctype html>
       <html lang="en">
         <head>
+        <link rel ="stylesheet" href ="../style.css">
           <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width">
-          <link href="/style.css" rel="stylesheet"/>
           <title>${title}</title>
         </head>
         <body>
@@ -18,5 +15,6 @@ function Layout({ title, content }) {
         </body>
       </html>
     `;
-  }
-  
+}
+
+module.exports = { Layout };

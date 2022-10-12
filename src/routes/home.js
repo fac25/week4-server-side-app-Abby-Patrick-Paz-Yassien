@@ -1,5 +1,7 @@
+const { homeHtml } = require("../templates/home");
+
 function get(request, response) {
-  response.send(`<h1>Home</h1>`)
+  response.send(homeHtml());
 }
 
-module.exports = { get }
+module.exports = { get };
