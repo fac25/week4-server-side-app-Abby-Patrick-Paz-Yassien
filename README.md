@@ -43,8 +43,7 @@ Make sure you have Git and Node (v18) installed.
 
 ## Project Plan / Learnings / Findings
 
-A journey of our project as well the planning process can be found in issue [Update README #18]([https://github.com/fac25/week4-server-side-app-Abby-Patrick-Paz-Yassien/issues/18])
-
+A journey of our project as well the planning process can be found in issue [Update README #18](https://github.com/fac25/week4-server-side-app-Abby-Patrick-Paz-Yassien/issues/18)
 
 ## Database
 
