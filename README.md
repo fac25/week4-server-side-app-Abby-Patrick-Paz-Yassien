@@ -39,7 +39,6 @@ Make sure you have Git and Node (v18) installed.
 - [x] Handle errors and inform the user
 - [x]  Styled appropriately
 
-### Stretch criteria 
 
 ## Project Plan / Learnings / Findings
 
@@ -104,7 +103,4 @@ We would gather for 5-10 minutes for a quick huddle to discuss the progress so f
 ### Software Methodologies
 
 During our planning stage, we identified there were functions and components that would be reused in the project. As a result, we decided to include modularization and attempted to follow the DRY principle.
-
-
-### Website Snapshot 
 
