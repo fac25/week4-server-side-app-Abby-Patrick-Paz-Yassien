@@ -47,7 +47,9 @@ server.get("/authenticate", (req, res) => {
     .then((user) => {
       // Exit function if user exists
       const dbUser = getUserByUsername(user.login);
-      if (dbUser) return res.redirect("/submit-questions");
+      if (dbUser) {
+        return createCookie(res, dbUser);
+      }
 
       bcrypt.hash(code, 12).then((hash) => {
         //returns an id for that user
@@ -57,6 +59,6 @@ server.get("/authenticate", (req, res) => {
     });
 });
 
-// server.use(missing.get);
+server.use(missing.get);
 
 module.exports = server;
