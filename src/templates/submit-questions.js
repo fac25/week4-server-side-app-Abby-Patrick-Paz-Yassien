@@ -15,7 +15,7 @@ function QuestionForm(arr, errors = {}) {
       ${validate(errors.question)}
       <textarea id="question" name="question"></textarea>
       <label for="topic">Topic</label>
-      ${validate(errors.topic)}
+      ${validate(errors.topic)}page
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
       <option value="mindset">Mindset</option>
