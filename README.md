@@ -20,6 +20,7 @@ Make sure you have Git and Node (v18) installed.
 2. Run `npm install` to install all the dependencies
 3. Run `npm run seed` to seed the local database
 4. Run `npm run dev` to start the server
+5. Run `npm run test` to carry out the tests
 
 *note that Github sign-up won't work on localhost
 
