@@ -1,14 +1,12 @@
 # Check-in Questions, the app.
 
-https://check-in-questions.herokuapp.com/
-
 ## Introduction 
 
 Our objective was to create a service which would allow our users to log their reading lists as well as recommend the books to others.
 
 The main page would be a collection of all the recommended books - from all users.
 
-Find our page hosted on [heroku](book-app-week3.herokuapp.com/)
+Find our page hosted on https://check-in-questions.herokuapp.com/
 
 ## Project Scope
 
