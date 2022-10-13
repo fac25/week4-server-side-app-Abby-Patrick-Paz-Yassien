@@ -3,19 +3,19 @@ const { allQuestionList, validate } = require('../utils')
 
 function QuestionForm(arr, errors = {}) {
   let content =/*html*/`
-
-    <nav>
+<div class="question-container">
+    <nav class="question-nav">
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
     <form method="POST" action="/log-out"><button>Log out</button></form>
     </nav>
-    <div>
-      <form method="POST"> 
+    <div class="submit-container">
+      <form method="POST" class="submit-form"> 
       <label for="question">Question</label>
       ${validate(errors.question)}
       <textarea id="question" name="question"></textarea>
       <label for="topic">Topic</label>
-      ${validate(errors.topic)}page
+      ${validate(errors.topic)}
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
       <option value="mindset">Mindset</option>
@@ -27,12 +27,13 @@ function QuestionForm(arr, errors = {}) {
   </select>   
     <button>Submit</button>
       </form>
-      <button><a href='/search-questions'>SKIP-Take me to the questions</a></button>
+      <a href='/search-questions'>SKIP-Take me to the questions</a>
       <div>
       <ul>
       ${allQuestionList(arr)}
       </ul>
       </div> 
+  </div>
   </div>
     `
   return Layout({ title: "Check-in questions | Contribute", content })

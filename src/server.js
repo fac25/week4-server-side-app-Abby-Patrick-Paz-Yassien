@@ -41,6 +41,7 @@ server.post("/log-out", logOut.post);
 // we need to POST this code to GH to get an access_token for talking to their API
 
 server.get("/authenticate", (req, res) => {
+
   const code = req.query.code;
   getToken(code)
     .then(getUser)

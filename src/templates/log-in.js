@@ -4,9 +4,9 @@ const { validate } = require("../utils.js");
 // Log in HTML
 
 function logInHtml(errors = {}) {
-    const title = "Log In";
-    const content = /* html */ `
-  
+  const title = "Log In";
+  const content = /* html */ `
+    <div class="home-container">
   <h1>${title}</h1>
   <form method="POST" action="/log-in">
     <label for="username">Username</label>
@@ -17,9 +17,10 @@ function logInHtml(errors = {}) {
     <input type="password" name="password" id="password" />
     <button type="submit">log In</button>
   </form>
+  </div>
   `;
-  
-  return Layout ({title, content} );
-  }
+
+  return Layout({ title, content });
+}
 
 module.exports = { logInHtml }
