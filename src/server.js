@@ -49,7 +49,6 @@ server.get("/authenticate", (req, res) => {
       const dbUser = getUserByUsername(user.login);
       if (dbUser) {
         return createCookie(res, dbUser);
-        //res.redirect("/submit-questions");
       }
 
       bcrypt.hash(code, 12).then((hash) => {
