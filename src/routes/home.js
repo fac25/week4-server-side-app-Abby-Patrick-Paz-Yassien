@@ -1,9 +1,8 @@
-const { homeHtml } = require("../templates/home");
 const {  redirectIfLoggedIn } = require("../utils");
+const { homeHtml } = require("../templates/home.js");
 
 function get(request, response) {
     redirectIfLoggedIn(request, response, homeHtml);
-    //response.send(homeHtml());
 }
 
 module.exports = { get };
