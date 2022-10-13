@@ -6,6 +6,7 @@ function SearchQuestions(allQuestions) {
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
+    <form method="POST" action="/log-out"><button>Log out</button></form>
     </nav>
     <div>
     <h1>Check-in Questions</h2>

@@ -1,6 +1,5 @@
 const { logInHtml } = require("../templates/log-in.js");
 const bcrypt = require("bcryptjs");
-const { createSession, getSession } = require("../model/sessions.js");
 const { getUserByUsername } = require("../model/users.js");
 const { createCookie, redirectIfLoggedIn, sanitize } = require("../utils");
 

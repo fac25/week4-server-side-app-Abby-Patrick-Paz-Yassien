@@ -13,6 +13,8 @@ const logIn = require('./routes/log-in.js')
 const signUp = require('./routes/sign-up.js')
 const submitQuestion = require('./routes/submit-questions.js')
 const searchQuestion = require('./routes/search-questions.js')
+const logOut = require('./routes/log-out.js')
+const missing = require('./routes/missing-routes.js')
 
 
 const body = express.urlencoded({ extended: false });
@@ -31,6 +33,9 @@ server.get("/submit-questions", submitQuestion.get)
 server.post("/submit-questions", body, submitQuestion.post)
 server.get("/search-questions", searchQuestion.get)
 server.post("/search-questions", body, searchQuestion.post)
+server.post("/log-out", logOut.post);
+
+server.use(missing.get);
 
 
 module.exports = server;
