@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert");
-const { request } = require("./helpers");
+const { request, reset } = require("./helpers");
 const { createUser, getUserByUsername } = require("../src/model/users");
 
 describe("server", () => {
