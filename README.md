@@ -2,9 +2,9 @@
 
 ## Introduction 
 
-Our objective was to create a service which would allow our users to log their reading lists as well as recommend the books to others.
+Our objective was to create a service which would allow our users to log their check-in questions as well as see the ones posted by others.
 
-The main page would be a collection of all the recommended books - from all users.
+The main page would be a collection of all the check-in questions - from the logged-in user.
 
 Find our page hosted on https://check-in-questions.herokuapp.com/
 
@@ -25,7 +25,7 @@ Make sure you have Git and Node (v18) installed.
 
 ## User stories
 
-- [x] As a user, I want to: submit information to your site for anyone to see
+- [x] As a user, I want to: submit a check-in question to your site for anyone to see
 - [x] As a user, I want to: come back to your site later and see what I posted is still there
 - [x] As a user, I want to be able to sign-up and login using my Github account
 
@@ -37,7 +37,7 @@ Make sure you have Git and Node (v18) installed.
 - [x] Social login (OAuth)
 - [x] Validate user-submitted data on the server
 - [x] Handle errors and inform the user
-- [x]  Styled appropriately
+- [x] Styled appropriately
 
 
 ## Project Plan / Learnings / Findings
