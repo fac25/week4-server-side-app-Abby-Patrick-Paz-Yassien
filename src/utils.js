@@ -30,7 +30,7 @@ function allQuestionList(arr) {
     <p>${question.username}</p>
   </li>`
     )
-        .join("")
+    .reverse().join("")
 }
 
 

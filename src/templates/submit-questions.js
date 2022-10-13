@@ -7,6 +7,7 @@ function QuestionForm(arr, errors = {}) {
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
+    <form method="POST" action="/log-out"><button>Log out</button></form>
     </nav>
     <div>
       <form method="POST"> 
