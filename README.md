@@ -87,8 +87,7 @@ Our database uses three tables following this schema:
 
 </details>
 
-
-
+![image](https://user-images.githubusercontent.com/2411572/195643393-391e7794-65c9-4740-9b7a-6c67c2e33dfe.png)
 
 ## Communication
 Throughout our project we used pair-programming method to write the code and rosolve issues. We met in-person, as well as had online meetings to discuss and work together.
@@ -103,4 +102,8 @@ We would gather for 5-10 minutes for a quick huddle to discuss the progress so f
 ### Software Methodologies
 
 During our planning stage, we identified there were functions and components that would be reused in the project. As a result, we decided to include modularization and attempted to follow the DRY principle.
+
+## A screenshot of the spike
+
+![image](https://user-images.githubusercontent.com/2411572/195643327-1a17d6ef-444e-4db4-950d-ed873567c82f.png)
 
