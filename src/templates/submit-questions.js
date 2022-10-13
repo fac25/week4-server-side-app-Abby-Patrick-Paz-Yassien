@@ -27,7 +27,7 @@ function QuestionForm(arr, errors = {}) {
   </select>   
     <button>Submit</button>
       </form>
-      <button>SKIP-Take me to the questions</button>
+      <button><a href='/search-questions'>SKIP-Take me to the questions</a></button>
       <div>
       <ul>
       ${allQuestionList(arr)}
