@@ -3,9 +3,9 @@ const { validate } = require("../utils.js");
 
 // Sign-up HTML
 function signUpHtml(errors = {}) {
-    const title = "Create your account";
-    const content = /*html*/ `
-      
+  const title = "Create your account";
+  const content = /*html*/ `
+    <div class="home-container">
       <h1>${title}</h1>
       <form method="POST">
 
@@ -19,9 +19,10 @@ function signUpHtml(errors = {}) {
       
       <button>Submit</button>
     </form>
+    </div>
     `;
-  
-  return Layout({title, content});
+
+  return Layout({ title, content });
 }
 
 module.exports = { signUpHtml };

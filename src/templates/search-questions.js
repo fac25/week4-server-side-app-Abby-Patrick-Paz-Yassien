@@ -3,6 +3,7 @@ const { allQuestionList } = require('../utils')
 
 function SearchQuestions(allQuestions) {
   let content =/*html*/`
+  <div class="question-container">
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
@@ -28,6 +29,7 @@ function SearchQuestions(allQuestions) {
       <ul>
         ${allQuestionList(allQuestions)}
       </ul>
+    </div>
     </div>`
   return Layout({ title: "Check-in questions | Search", content })
 }
