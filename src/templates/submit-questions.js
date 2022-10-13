@@ -7,6 +7,7 @@ function QuestionForm(arr, errors = {}) {
     <nav>
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
+    <form method="POST" action="/log-out"><button>Log out</button></form>
     </nav>
     <div>
       <form method="POST"> 
@@ -14,7 +15,7 @@ function QuestionForm(arr, errors = {}) {
       ${validate(errors.question)}
       <textarea id="question" name="question"></textarea>
       <label for="topic">Topic</label>
-      ${validate(errors.topic)}
+      ${validate(errors.topic)}page
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
       <option value="mindset">Mindset</option>
@@ -26,7 +27,7 @@ function QuestionForm(arr, errors = {}) {
   </select>   
     <button>Submit</button>
       </form>
-      <button>SKIP-Take me to the questions</button>
+      <button><a href='/search-questions'>SKIP-Take me to the questions</a></button>
       <div>
       <ul>
       ${allQuestionList(arr)}
