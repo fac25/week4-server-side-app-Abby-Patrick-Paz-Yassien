@@ -4,7 +4,7 @@ const { allQuestionList } = require('../utils')
 function SearchQuestions(allQuestions) {
   let content =/*html*/`
   <div class="question-container">
-    <nav>
+    <nav class="question-nav">
     <a href='/submit-questions'>Contribute your Question</a>
     <a href='/search-questions'>Look into Questions pool</a>
     <form method="POST" action="/log-out"><button>Log out</button></form>
