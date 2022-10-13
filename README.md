@@ -6,7 +6,7 @@ Our objective was to create a service which would allow our users to log their c
 
 The main page would be a collection of all the check-in questions - from the logged-in user.
 
-Find our page hosted on https://check-in-questions.herokuapp.com/
+Find our page hosted here [on heroku](https://check-in-questions.herokuapp.com/)
 
 ## Project Scope
 
