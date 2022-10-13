@@ -27,7 +27,7 @@ Make sure you have Git and Node (v18) installed.
 
 - [x] As a user, I want to: submit information to your site for anyone to see
 - [x] As a user, I want to: come back to your site later and see what I posted is still there
-- [x] As a user, I want to: be the only person allowed to delete my stuff
+- [x] As a user, I want to be able to sign-up and login using my Github account
 
 ### Acceptance criteria
 - [x] Express server
