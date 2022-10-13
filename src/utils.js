@@ -45,5 +45,19 @@ function validate(errorMessage) {
     return "";
   }
 }
-module.exports = { createCookie, redirectIfLoggedIn, allQuestionList, sanitize, validate }
+
+function validateLoginAndSignup (username, password, errors) {
+    //let errors = {};
+  if (!username) {
+    errors.username = "Please add a username";
+  }
+  if (!password) {
+    errors.password = "Please add a password";
+  }
+
+  
+  }
+
+
+module.exports = { createCookie, redirectIfLoggedIn, allQuestionList, sanitize, validate, validateLoginAndSignup }
 

@@ -1,6 +1,5 @@
 const { redirectIfLoggedIn } = require("../utils");
 const { homeHtml } = require("../templates/home.js");
-const dotenv = require("dotenv");
 
 function get(request, response) {
   const client_id = process.env.client_id;

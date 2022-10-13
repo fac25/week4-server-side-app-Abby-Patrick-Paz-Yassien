@@ -1,8 +1,7 @@
 const { signUpHtml } = require("../templates/sign-up.js");
 const { createUser, getUserByUsername } = require("../model/users");
-const { redirectIfLoggedIn,sanitize } = require("../utils");
+const { createCookie, redirectIfLoggedIn, sanitize, validateLoginAndSignup } = require("../utils");
 
-const { createCookie } = require('../utils')
 const bcrypt = require("bcryptjs");
 
 function get(request, response) {
@@ -13,17 +12,12 @@ function post(request, response) {
   let { username, password } = request.body;
 
   let errors = {};
-  if (!username) {
-    errors.username = "Please add a username";
-  }
-  if (!password) {
-    errors.password = "Please add a password";
-  }
-
+  validateLoginAndSignup(username, password, errors)
   if (Object.keys(errors).length){
     response.status(400)
     return response.send(signUpHtml(errors))
   }
+  
 
   username = sanitize(username);
   let user = getUserByUsername(username);
