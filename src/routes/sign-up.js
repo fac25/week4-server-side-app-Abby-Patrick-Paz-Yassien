@@ -13,8 +13,12 @@ function post(request, response) {
   let { username, password } = request.body;
 
   let errors = {};
-  !username ? (errors.username = "Please add a username") : "";
-  !password ? (errors.password = "Please add a password") : "";
+  if (!username) {
+    errors.username = "Please add a username";
+  }
+  if (!password) {
+    errors.password = "Please add a password";
+  }
 
   if (Object.keys(errors).length){
     response.status(400)

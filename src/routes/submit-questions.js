@@ -1,18 +1,18 @@
-const { QuestionForm } = require("../templates/submit-questions.js")
-const { addQuestions, getUserQuestions } = require("../model/questions.js")
+const { QuestionForm } = require("../templates/submit-questions.js");
+const { addQuestions, getUserQuestions } = require("../model/questions.js");
 const { getUserByID } = require("../model/users.js");
 const { sanitize } = require("../utils");
-const { getSession } = require("../model/sessions.js")
+const { getSession } = require("../model/sessions.js");
 
 function get(req, res) {
-  const sid = req.signedCookies?.sid
-  const session = getSession(sid)
+  const sid = req.signedCookies?.sid;
+  const session = getSession(sid);
   if (!session) {
-    res.status(400).redirect("/")
+    res.status(400).redirect("/");
   } else {
-    const user_id = session?.user_id
-    const questionsArr = getUserQuestions(user_id)
-    res.send(QuestionForm(questionsArr))
+    const user_id = session?.user_id;
+    const questionsArr = getUserQuestions(user_id);
+    res.send(QuestionForm(questionsArr));
   }
 }
 
@@ -21,16 +21,21 @@ function post(req, res) {
 
   const sid = req.signedCookies?.sid;
   const session = getSession(sid);
-  const user_id = session?.user_id
-  const questionsArr = getUserQuestions(user_id)
+  const user_id = session?.user_id;
+  const questionsArr = getUserQuestions(user_id);
 
   getUserByID(session.user_id);
 
   let errors = {};
-  !topic ? (errors.topic = "Please select a topic") : "";
-  !question ? (errors.question = "Please add a question") : "";
+  if (!topic) {
+    errors.topic = "Please select a topic";
+  }
+  if (!question) {
+    errors.question = "Please add a question";
+  }
+
   if (Object.keys(errors).length) {
-    res.status(400)
+    res.status(400);
     return res.send(QuestionForm(questionsArr, errors));
   }
 
@@ -38,6 +43,5 @@ function post(req, res) {
   addQuestions(topic, question, session.user_id);
   res.redirect(`/submit-questions`);
 }
-
 
 module.exports = { get, post };
