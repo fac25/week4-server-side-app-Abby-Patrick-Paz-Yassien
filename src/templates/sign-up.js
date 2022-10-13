@@ -5,15 +5,15 @@ const { validate } = require("../utils.js");
 function signUpHtml(errors = {}) {
   const title = "Create your account";
   const content = /*html*/ `
-    <div class="home-container">
+    <div class="signup-container">
       <h1>${title}</h1>
       <form method="POST">
 
-      <label for="username">username</label>
+      <label for="username">Username</label>
       ${validate(errors.username)}
       <input id="username" name="username" type="text" />
       
-      <label for="password">password</label>
+      <label for="password">Password</label>
       ${validate(errors.password)}
       <input id="password" name="password" type="password" />
       

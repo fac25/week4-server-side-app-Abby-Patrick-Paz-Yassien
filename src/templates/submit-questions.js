@@ -5,16 +5,16 @@ function QuestionForm(arr, errors = {}) {
   let content =/*html*/`
 <div class="question-container">
     <nav class="question-nav">
-    <a href='/submit-questions'>Contribute your Question</a>
-    <a href='/search-questions'>Look into Questions pool</a>
-    <form method="POST" action="/log-out"><button>Log out</button></form>
+    <a href='/submit-questions'>Share your Question</a>
+    <a href='/search-questions'>Find Questions</a>
+    <form method="POST" action="/log-out" ><button class="orange-btn">Log out</button></form>
     </nav>
     <div class="submit-container">
       <form method="POST" class="submit-form"> 
-      <label for="question">Question</label>
+      <label for="question" class="submit-form-label">Share your Check-in Question</label>
       ${validate(errors.question)}
       <textarea id="question" name="question"></textarea>
-      <label for="topic">Topic</label>
+      <label for="topic" class="submit-form-label">Topic</label>
       ${validate(errors.topic)}
       <select name="topic" id="topic">
       <option value="">--Please choose an Topic--</option>
@@ -28,13 +28,15 @@ function QuestionForm(arr, errors = {}) {
     <button>Submit</button>
       </form>
       <a href='/search-questions'>SKIP-Take me to the questions</a>
+      </div>
+
       <div>
       <ul>
       ${allQuestionList(arr)}
       </ul>
       </div> 
   </div>
-  </div>
+  
     `
   return Layout({ title: "Check-in questions | Contribute", content })
 }
