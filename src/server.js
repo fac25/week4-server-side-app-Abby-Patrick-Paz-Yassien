@@ -41,20 +41,23 @@ server.post("/log-out", logOut.post);
 // we need to POST this code to GH to get an access_token for talking to their API
 
 server.get("/authenticate", (req, res) => {
-    const code = req.query.code;
-    getToken(code)
-        .then(getUser)
-        .then((user) => {
-            // Exit function if user exists
-            const dbUser = getUserByUsername(user.login);
-            if (dbUser) return res.redirect("/submit-questions");
 
-            bcrypt.hash(code, 12).then((hash) => {
-                //returns an id for that user
-                const newUser = createUser({ username: user.login, hash });
-                createCookie(res, newUser);
-            });
-        });
+  const code = req.query.code;
+  getToken(code)
+    .then(getUser)
+    .then((user) => {
+      // Exit function if user exists
+      const dbUser = getUserByUsername(user.login);
+      if (dbUser) {
+        return createCookie(res, dbUser);
+      }
+
+      bcrypt.hash(code, 12).then((hash) => {
+        //returns an id for that user
+        const newUser = createUser({ username: user.login, hash });
+        createCookie(res, newUser);
+      });
+    });
 });
 
 server.use(missing.get);
