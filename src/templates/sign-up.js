@@ -7,7 +7,7 @@ function signUpHtml(errors = {}) {
   const content = /*html*/ `
     <div class="signup-container">
       <h1>${title}</h1>
-      <form method="POST">
+      <form method="POST" class="sign-up-form">
 
       <label for="username">Username</label>
       ${validate(errors.username)}

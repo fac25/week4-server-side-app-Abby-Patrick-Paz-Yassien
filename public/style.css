@@ -26,7 +26,7 @@ label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 1.5rem;
     border: 2px dashed black
 }
@@ -198,4 +198,41 @@ button:active {
     background-position: 0 0;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    h1,
+    .submit-form-label {
+        font-family: 'Silkscreen';
+        font-size: 3rem;
+    }
+
+    label {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .home-content {
+        padding: 1rem 0rem;
+    }
+
+    .log-in-form,
+    .sign-up-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .question-nav {
+        margin-left: 60%;
+        height: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
+
 }
