@@ -16,6 +16,7 @@ function Layout({ title, content }) {
               ${content}
             </main>
           </div>
+          <script src="script.js"></script>
         </body>
       </html>
     `;
