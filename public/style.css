@@ -200,13 +200,13 @@ button:active {
     text-decoration: none;
 }
 
-@media screen and (max-width: 600px) {
-
+@media(min-width:600px){
     h1,
-    .submit-form-label {
-        font-family: 'Silkscreen';
+    .submit-form-label {  
         font-size: 3rem;
     }
+}
+@media screen and (max-width: 600px) {
 
     label {
         font-size: 3rem;
