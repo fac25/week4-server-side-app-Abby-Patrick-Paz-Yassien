@@ -17,7 +17,8 @@ function get(req, res) {
 }
 
 function post(req, res) {
-  let { topic, question } = req.body;
+  const topic = req.body.topic;
+  const question = sanitize(req.body.question)
 
   const sid = req.signedCookies?.sid;
   const session = getSession(sid);
@@ -36,10 +37,10 @@ function post(req, res) {
 
   if (Object.keys(errors).length) {
     res.status(400);
-    return res.send(QuestionForm(questionsArr, errors));
+    return res.send(QuestionForm(questionsArr, errors, question));
   }
 
-  question = sanitize(question);
+
   addQuestions(topic, question, session.user_id);
   res.redirect(`/submit-questions`);
 }
