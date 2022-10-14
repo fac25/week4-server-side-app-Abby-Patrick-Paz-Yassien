@@ -1,3 +1,5 @@
+
+
 # Check-in Questions, the app.
 
 ## Roles
@@ -131,3 +133,11 @@ During our planning stage, we identified there were functions and components tha
 
 ![image](https://user-images.githubusercontent.com/2411572/195643327-1a17d6ef-444e-4db4-950d-ed873567c82f.png)
 
+## Software Planning
+We discussed as a group what the main components would be as well as create some user stories.
+
+During this stage, we created a flow chart of the website as well as a wireframe.
+Research was done before about the project spike chosen [OAuth apps] so we could a better overview of what would be required.
+Multiple issues were created at the beginning to assign them to our collaborators.
+
+It was our belief that by planning the project in such a way, it would provide better workflow, understanding of the project requirements and improve performance.
