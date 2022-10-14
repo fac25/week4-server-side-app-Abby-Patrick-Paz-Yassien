@@ -6,9 +6,9 @@ const { validate } = require("../utils.js");
 function logInHtml(errors = {}) {
   const title = "Log In";
   const content = /* html */ `
-    <div class="home-container">
+    <div class="login-container">
   <h1>${title}</h1>
-  <form method="POST" action="/log-in">
+  <form method="POST" action="/log-in" class="log-in-form">
     <label for="username">Username</label>
     ${validate(errors.username)}
     <input name="username" type="text" />

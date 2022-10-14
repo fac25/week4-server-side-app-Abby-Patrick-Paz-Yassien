@@ -5,16 +5,16 @@ function SearchQuestions(allQuestions) {
   let content =/*html*/`
   <div class="question-container">
     <nav class="question-nav">
-    <a href='/submit-questions'>Contribute your Question</a>
-    <a href='/search-questions'>Look into Questions pool</a>
-    <form method="POST" action="/log-out"><button>Log out</button></form>
+    <a href='/submit-questions'>Share your Question</a>
+    <a href='/search-questions'>Find Questions</a>
+    <form method="POST" action="/log-out"><button class="orange-btn">Log out</button></form>
     </nav>
     <div>
     <h1>Check-in Questions</h2>
     <form method="POST">
-    <label for="topic">Question Topic?</label>
+    <label for="topic">Choose a topic</label>
       <select name="topic" id="topic">
-        <option value="">--Please choose an Topic--</option>
+        <option value="">---See All---</option>
         <option value="mindset">Mindset</option>
         <option value="icebreaker">Icebreaker</option>
         <option value="holiday">Holiday</option>

@@ -1,9 +1,56 @@
+body {
+    margin: 0px;
+    background-color: #55C7E1;
+    font-family: 'Open Sans', 'Silkscreen', sans-serif;
+}
+
+h1,
+.submit-form-label {
+    font-family: 'Silkscreen';
+    font-size: 2rem;
+}
+
+label {
+    font-weight: 700;
+}
+
 .home-container {
-    height: 40rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    border: 2px dashed black
+}
+
+.home-nav {
+
+    width: 23rem;
+    display: flex;
+    justify-content: space-around
+}
+
+.signup-container,
+.login-container {
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    padding: 1.5rem;
+    width: 15rem;
+    height: 6rem;
 }
 
 .question-container {
@@ -29,8 +76,9 @@
 }
 
 .question-nav {
+    margin-left: 60%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     padding-bottom: 2rem;
     padding-top: 1rem;
@@ -38,9 +86,10 @@
 
 ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 2fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    gap: 2rem;
     list-style: none;
+    padding: 0 2rem;
 }
 
 li {
@@ -51,15 +100,139 @@ li {
     padding: 1rem;
 }
 
-li>p {
-    word-wrap: break-word;
+
+#topic-label {
+    text-align: center;
+    padding: 0 1rem;
+    background-color: #F3CA40;
+    color: #444545;
+    border-radius: 0.5rem;
 }
 
-a {
+#post-questions {
     width: auto;
-    color: black;
-    background-color: rgb(226, 226, 226);
-    border: 1px solid black;
-    border-radius: 0.2rem;
-    padding: 0.4rem;
+    height: 7rem;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    word-wrap: break-word;
+    overflow: scroll;
+}
+
+#username-label {
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Silkscreen';
+}
+
+#topic {
+    padding: 0 2rem;
+    margin: 0.5rem 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+a,
+button {
+    font-size: 1rem;
+    background: #2C302E;
+    border: 1px solid #2C302E;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+a:hover,
+a:active,
+button:hover,
+button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #2C302E;
+    text-decoration: none;
+}
+
+
+.yellow-btn {
+    font-size: 1rem;
+    background: #F9DC5C;
+    border: 1px solid #F9DC5C;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.yellow-btn:hover,
+.yellow-btn:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+
+.orange-btn {
+    font-size: 1rem;
+    background: #F37748;
+    border: 1px solid #F37748;
+    padding: 8px 10px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.orange-btn:hover,
+.orange-btn:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    h1,
+    .submit-form-label {
+        font-family: 'Silkscreen';
+        font-size: 3rem;
+    }
+
+    label {
+        font-size: 3rem;
+        font-weight: 700;
+    }
+
+    .home-content {
+        padding: 1rem 0rem;
+    }
+
+    .log-in-form,
+    .sign-up-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .question-nav {
+        margin-left: 60%;
+        height: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
+
 }

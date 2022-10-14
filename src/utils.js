@@ -25,12 +25,16 @@ function allQuestionList(arr) {
   return arr.map(
     (question) => `
   <li>
-    <p>Topic: ${question.topic}</p>
-    <p>Check-in Question: ${question.question}</p>
-    <p>Username: ${question.username}</p>
+    <p id="topic-label">${capitalizeFirstLetter(question.topic)}</p>
+    <p id="post-questions">${question.question}</p>
+    <p id="username-label">${question.username}</p>
   </li>`
   )
     .reverse().join("")
+}
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 
