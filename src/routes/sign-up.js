@@ -13,11 +13,11 @@ function post(request, response) {
 
   let errors = {};
   validateLoginAndSignup(username, password, errors)
-  if (Object.keys(errors).length){
+  if (Object.keys(errors).length) {
     response.status(400)
-    return response.send(signUpHtml(errors))
+    return response.send(signUpHtml(errors, username))
   }
-  
+
 
   username = sanitize(username);
   let user = getUserByUsername(username);

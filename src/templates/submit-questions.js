@@ -1,7 +1,7 @@
 const { Layout } = require('./layout.js')
 const { allQuestionList, validate } = require('../utils')
 
-function QuestionForm(arr, errors = {}) {
+function QuestionForm(arr, errors = {}, question = '') {
   let content =/*html*/`
 <div class="question-container">
     <nav class="question-nav">
@@ -13,7 +13,7 @@ function QuestionForm(arr, errors = {}) {
       <form method="POST" class="submit-form"> 
       <label for="question" class="submit-form-label">Share your Check-in Question</label>
       ${validate(errors.question)}
-      <textarea id="question" name="question"></textarea>
+      <textarea id="question" name="question" value="${question}"></textarea>
       <label for="topic" class="submit-form-label">Topic</label>
       ${validate(errors.topic)}
       <select name="topic" id="topic">
