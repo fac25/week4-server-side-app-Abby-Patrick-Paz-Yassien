@@ -14,7 +14,7 @@ function QuestionForm(arr, errors = {}, question = '') {
       <form method="POST" class="submit-form"> 
       <label for="question" class="submit-form-label">Share your Check-in Question</label>
       ${validate(errors.question)}
-      <textarea id="question" name="question" value="${question}"></textarea>
+      <textarea id="question" name="question">${question}</textarea>
       <label for="topic" class="submit-form-label">Topic</label>
       ${validate(errors.topic)}
       <select name="topic" id="topic">
