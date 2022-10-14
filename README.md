@@ -1,16 +1,39 @@
 # Check-in Questions, the app.
 
+## Roles
+
+* Paz: Scrum Facilitator
+* Abby: User Experience
+* Yassien: Dev Ops
+* Patick: Quality Assurance
+
 ## Introduction 
-
-Our objective was to create a service which would allow our users to log their check-in questions as well as see the ones posted by others.
-
-The main page would be a collection of all the check-in questions - from the logged-in user.
 
 Find our page hosted here [on heroku](https://check-in-questions.herokuapp.com/)
 
+### What are you building?
+Our objective was to create a service which would allow our users to log their check-in questions as well as see the ones posted by others.
+The main page would be a collection of all the check-in questions - from the logged-in user.
+
+### Why are you building it?
+Our features were built with a minimal design and objective in mind: meet the acceptance criterias and basic user stories.
+
 ## Project Scope
 
+### What are you not building?
+
+### How did you decide what features were important?
 Our features were built with a minimal design and objective in mind: meet the acceptance criterias and basic user stories.
+
+## Requirement analysis 
+
+### How will you ensure your project is accessible to as many users as possible?
+
+### Are there any legal or regulatory requirements you should consider?
+
+### Security
+
+## Research and findings 
 
 ## Setup
 
